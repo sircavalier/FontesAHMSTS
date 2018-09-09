@@ -1,0 +1,1 @@
+Sun Sep 09 14:41:55 BRT 2018 ran with arguments: create AccountLegacyWeb -v 9.0.7.B.RELEASE -t base --property base.runtime.user=null --property base.jmx.port=8080 -i C:\Users\AndersonHumberto\git\sircavalier\DesafioLegado\AccountLegacyWeb\WebContent --java-home C:\Program Files\Java\jre1.8.0_181 

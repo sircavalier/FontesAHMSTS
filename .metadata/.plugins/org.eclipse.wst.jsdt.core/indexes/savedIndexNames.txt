@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\AndersonHumberto\git\sircavalier\DesafioLegado\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2725182095.index
+4119369179.index
+2792934251.index
+309355564.index
+4161642547.index
+1779913541.index
