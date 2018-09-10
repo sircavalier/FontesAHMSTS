@@ -8,7 +8,7 @@
 	  {
 		"lancamentoContaCorrenteCliente": {
 		  "numeroRemessaBanco": 64320236054,
-		  "nomeSituacaoRemessa": "Pago",
+		  "nomeSituacaoRemessa": "Pendente",
 		  "dadosDomicilioBancario": {
 			"codigoBanco": 123,
 			"numeroAgencia": 1,
@@ -54,7 +54,7 @@
 	  {
 		"lancamentoContaCorrenteCliente": {
 		  "numeroRemessaBanco": 64320236054,
-		  "nomeSituacaoRemessa": "Pago",
+		  "nomeSituacaoRemessa": "Futuro",
 		  "dadosDomicilioBancario": {
 			"codigoBanco": 123,
 			"numeroAgencia": 1,

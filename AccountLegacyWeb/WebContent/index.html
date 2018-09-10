@@ -7,18 +7,13 @@
 	<link rel="stylesheet" href="css/bootstrap.css" />
 </head>
 
-<body ng-controller="SummaryCtrl as vm" style="margin-top:20px;">
-	<!--
+<body ng-controller="SummaryCtrl as vm" style="margin-top:20px;" onload="$('#txtSituacao').focus();">
 	<div class="container" style="margin-bottom:20px;">
 		<fieldset class="fieldset">
 			<label id="lblSituacao" for="txtSituacao">Filtrar por situa&ccedil;&atilde;o:&nbsp;</label>
-			<select id="selSituacao">
-                 <option ng-repeat="item in vm.records | unique: 'descricaoSituacao'">{{item.descricaoSituacao}}</option>
-			</select>&nbsp;&nbsp;&nbsp;
-			<button class="btn btn-primary" ng-click="vm.Pesquisar()">Pesquisar</button>
+			<input type="text" ng-model="searchSituation" id="txtSituacao" />
 		</fieldset>
 	</div>
-	-->
 	
 	<div class="container">
 		<label>Lan&ccedil;amentos:</label>
@@ -34,7 +29,7 @@
 					<th scope="col">Valor Final</th>
 				</tr>
 			</thead>
-			<tbody ng-repeat="item in vm.records">
+			<tbody ng-repeat="item in vm.records | filter:searchSituation">
 				<tr>
 					<td>{{item.dataLancamento | date: 'dd/MM/yyyy'}}</td>
 					<td>{{item.descricaoLancamento}}</td>
@@ -48,15 +43,15 @@
 			<tfoot>
 				<tr class="table-secondary" style="font-weight: bold;">
 					<td colspan="6" align="right">Valor Total: </td>
-					<td align="right">{{ vm.records|total:'valorFinal' | currency: 'R$ ': 2}}</td>
+					<td align="right">{{ vm.records | filter:searchSituation |total:'valorFinal'  | currency: 'R$ ': 2}}</td>
 				</tr>
 			</tfoot>
 		</table>
 	</div>
 
 	<script src="scripts/bootstrap.js" charset="utf-8"></script>
-	<script src="scripts/jquery.js" charset="utf-8"></script>
 	<script src="scripts/angular.js" charset="utf-8"></script>
-	<script src="app.js"></script>
+	<script src="scripts/jquery.js" charset="utf-8"></script>
+	<script src="app.js" charset="utf-8"></script>
 </body>
 </html>

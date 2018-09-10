@@ -1,23 +1,6 @@
-var app = angular.module('AccountApp', []);
+var appFilter = angular.module('AccountApp', []);
 
-app.run(["$locale", function ($locale) {
-    $locale.NUMBER_FORMATS.GROUP_SEP = ".";
-    $locale.NUMBER_FORMATS.DECIMAL_SEP = ",";
-}]);
-app.controller('SummaryCtrl', ['$scope', '$http', function($scope, $http) {
-    var vm = this;
-    $scope.searchSituation = '';
-    $http({method: 'GET',
-    url:'http://localhost:8081/api/v1/account/summary',
-    headers:{'Access-Control-Allow-Credentials':'true',
-       'Access-Control-Allow-Headers':'Content-Type, X-Request-With, X-Requested-By',
-       'Access-Control-Allow-Methods':'GET, OPTIONS',
-       'Access-Control-Allow-Origin':'*'}}).then(function(response) {
-        vm.records = response.data.data;
-    });
-}]);
-
-app.filter('total', function () {
+appFilter.filter('total', function () {
     return function (input, property) {
         var i =  input.length;
             var total = 0;
@@ -28,7 +11,7 @@ app.filter('total', function () {
 });
 
 // here we define our unique filter
-app.filter('unique', function() {
+appFilter.filter('unique', function() {
     // we will return a function which will take in a collection
     // and a keyname
     return function(collection, keyname) {
